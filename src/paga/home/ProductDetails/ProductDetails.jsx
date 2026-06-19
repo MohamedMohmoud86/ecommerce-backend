@@ -24,23 +24,33 @@ function ProductDetails() {
     const [loadingRelatedProducts, setLoadingRelatedProducts] = useState(true)
 
 
-    useEffect(() => {
-        const fetchProduct = async () => {
-            try {
-                const res = await fetch(`https://dummyjson.com/products/${id}`)
-                const data = await res.json()
-                setProduct(data)
-                setLoading(false)
+  useEffect(() => {
+  const getProductDetail = async () => {
+    try {
+      setLoading(true);
+      let res;
+      let data;
 
+      
+      if (id.length > 10) {
+        res = await fetch(`http://192.168.1.13:5000/api/products/${id}`);
+        data = await res.json();
+      } else {
+        
+        res = await fetch(`https://dummyjson.com/products/${id}`);
+        data = await res.json();
+      }
 
+      setProduct(data);
+    } catch (error) {
+      console.error("Error fetching product details:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
 
-            } catch (error) {
-                console.log(error);
-            }
-        }
-        fetchProduct()
-
-    }, [id]);
+  getProductDetail();
+}, [id]);
 
 
     useEffect(() => {

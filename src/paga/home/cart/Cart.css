@@ -9,6 +9,7 @@
 
 .checkout{
     margin: 50px 0;
+    padding: 40px;
 }
 
 .checkout .ordersummary{
@@ -21,7 +22,7 @@
 
 .checkout .ordersummary h1{
     border-bottom: 1px solid var(--border_color);
-    padding: 20 0px;
+    padding: 20px 0;
     margin-bottom: 20px;
     color: var(--maain_color);
 
@@ -188,4 +189,82 @@
 .checkout .bottom_summary .button_div button:hover{
     background: transparent;
     color: var(--maain_color);
+}
+
+
+/* ================= RESPONSIVE CHECKOUT ================= */
+
+@media (max-width: 768px) {
+
+  .checkout {
+    margin: 20px 0;
+    padding: 0 10px;
+  }
+
+  .checkout .ordersummary {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .checkout .ordersummary h1 {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .checkout .items {
+    height: auto;
+    max-height: 500px;
+  }
+
+  .checkout .items .item_cart {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: auto;
+    padding: 20px 10px;
+    gap: 15px;
+  }
+
+  .checkout .items .item_cart .image_name {
+    flex-direction: column;
+    gap: 10px;
+     justify-content: center;
+      text-align: center;
+  }
+
+  .checkout .items .item_cart .img_item {
+    width: 100%;
+  }
+
+  .checkout .items .item_cart img {
+    height: 90px;
+  }
+
+  .checkout .items .item_cart h4 {
+    font-size: 15px;
+  }
+
+  .checkout .items .item_cart .quantity_control {
+    justify-content: center;
+  }
+
+  .checkout .items .item_cart .delete_item {
+    margin-top: 10px;
+  }
+
+  .checkout .bottom_summary .shop_table {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .checkout .bottom_summary .shop_table p,
+  .checkout .bottom_summary .shop_table .total_checkout {
+    font-size: 18px;
+  }
+
+  .checkout .bottom_summary .button_div button {
+    font-size: 18px;
+    padding: 12px 0;
+  }
 }

@@ -19,7 +19,7 @@ function Favorites() {
                     <h2>Your Favorites :</h2>
                 </div>
 
-                {Favorites.lenght === 0 ? (
+                {Favorites.length === 0 ? (
                    <p>No Favorites Product Yet </p>
                 ) : (
                     <div className="myFav">

@@ -28,11 +28,22 @@ function SlideProduct({data , title}) {
                 delay: 2500,
                 disableOnInteraction: false,
             }}  
-            breakpoints={{
-  320: { slidesPerView: 1 },
-  480: { slidesPerView: 2 },
-  768: { slidesPerView: 3 },
-  1024: { slidesPerView: 5 },
+            slidesPerView={4}
+  spaceBetween={10}
+  breakpoints={{
+    0: {
+      slidesPerView: 2,
+    },
+    480: {
+      slidesPerView: 2.5,
+    },
+    768: {
+      slidesPerView: 3,
+    },
+    1024: {
+      slidesPerView: 4,
+    },
+  
 }} navigation={true} modules={[Navigation,  Autoplay]} className="mySwiper">
 
                 

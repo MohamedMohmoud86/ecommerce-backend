@@ -41,16 +41,16 @@ function AboutFooterSection() {
 
         <div className=" box">
           <h2 className="logo">App</h2>
-          <p>Powering your world with the best electronics.</p>
-          <p>fci_zu zagazig</p>
-          <p>Email: r4rfredtre3@gmail.com </p>
+          <h5>Powering your world with the best electronics.</h5>
+          <h5>fci_zu zagazig</h5>
+          <h5>Email: r4rfredtre3@gmail.com </h5>
         </div>
 
         <div className=" box">
           <h3>Customer Service</h3>
-          <p>Contact Us</p>
-          <p>Shipping & Reboxs</p>
-          <p>FAQs</p>
+          <h5>Contact Us</h5>
+          <h5>Shipping & Reboxs</h5>
+          <h5>FAQs</h5>
         </div>
 
         <div className=" box">
