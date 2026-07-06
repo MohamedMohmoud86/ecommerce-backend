@@ -40,11 +40,13 @@ app.use((req, res, next) => {
   next();
 });
 
+app.set('trust proxy', 1);
 
 const apiLimiter = rateLimit({
   windowMs: 15 * 60 * 1000, 
   max: 100,
-  message: { message: "Too many requests from this IP, please try again after 15 minutes." }
+  message: { message: "Too many requests from this IP, please try again after 15 minutes." },
+  validate: { trustProxy: false } 
 });
 app.use("/api", apiLimiter);
 
@@ -298,7 +300,7 @@ app.post(
           message: `Hello ${user.name}, you have successfully logged in.`
         });
       } catch (notifErr) {
-        console.error("⚠️ Failed to create login notification:", notifErr.message);
+        console.error(" Failed to create login notification:", notifErr.message);
       }
 
       res.json({
