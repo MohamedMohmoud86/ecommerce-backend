@@ -658,6 +658,13 @@ app.post(
           SERVER
 ========================= */
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, "0.0.0.0", () => {
-  console.log(`🚀 Server is successfully running on http://192.168.1.13:${PORT}`);
-});
+
+
+if (process.env.NODE_ENV !== 'production') {
+  app.listen(PORT, () => {
+    console.log(`🚀 Server is running locally on port ${PORT}`);
+  });
+}
+
+
+module.exports = app;
