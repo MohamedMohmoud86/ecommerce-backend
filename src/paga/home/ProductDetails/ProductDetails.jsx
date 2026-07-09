@@ -33,7 +33,7 @@ function ProductDetails() {
 
       
       if (id.length > 10) {
-        res = await fetch(`http://192.168.1.13:5000/api/products/${id}`);
+        res = await fetch(`https://final-project-production-3b18.up.railway.app/api/products/${id}`);
         data = await res.json();
       } else {
         

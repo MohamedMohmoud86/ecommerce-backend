@@ -15,7 +15,7 @@ export default function NotificationBell({ userId }) {
   const fetchNotifications = async () => {
     if (!userId) return;
     try {
-      const res = await axios.get(`http://localhost:5000/api/notifications/${userId}`);
+      const res = await axios.get(`https://final-project-production-3b18.up.railway.app/api/notifications/${userId}`);
       setNotifications(res.data);
     } catch (err) {
       console.error(err);
@@ -56,7 +56,7 @@ export default function NotificationBell({ userId }) {
     
     if (!isOpen && unreadCount > 0) {
       try {
-        await axios.put(`http://localhost:5000/api/notifications/read-all/${userId}`);
+        await axios.put(`https://final-project-production-3b18.up.railway.app/api/notifications/read-all/${userId}`);
         setNotifications(prev => prev.map(n => ({ ...n, isRead: true })));
       } catch (err) {
         console.error(err);

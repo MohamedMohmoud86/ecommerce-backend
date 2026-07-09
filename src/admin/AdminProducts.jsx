@@ -15,7 +15,7 @@ export default function AdminProducts() {
  
   const fetchProducts = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/products");
+      const res = await axios.get("https://final-project-production-3b18.up.railway.app/api/products");
       setProducts(res.data);
     } catch (err) {
       console.error("Failed to fetch products", err);
@@ -41,7 +41,7 @@ const handleSubmit = async (e) => {
     };
 
    
-    await axios.post("http://localhost:5000/api/products", payload);
+    await axios.post("https://final-project-production-3b18.up.railway.app/api/products", payload);
     
     toast.success("Product Added Successfully! 🎉");
     setFormData({ title: "", price: "", description: "", category: "", thumbnail: "" });
@@ -58,7 +58,7 @@ const handleSubmit = async (e) => {
 
       if (stringId.length > 10) {
      
-        const res = await fetch(`http://localhost:5000/api/products/${stringId}`, {
+        const res = await fetch(`https://final-project-production-3b18.up.railway.app/api/products/${stringId}`, {
           method: "DELETE",
         });
 

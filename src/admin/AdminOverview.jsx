@@ -8,7 +8,7 @@ export default function AdminOverview() {
   useEffect(() => {
     const fetchStats = async () => {
       try {
-        const res = await axios.get("http://192.168.1.13:5000/api/admin/dashboard-stats");
+        const res = await axios.get("https://final-project-production-3b18.up.railway.app/api/admin/dashboard-stats");
         setData(res.data);
       } catch (err) {
         console.error("Failed to fetch dashboard stats", err);

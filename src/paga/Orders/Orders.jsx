@@ -26,7 +26,7 @@ function Orders() {
       }
 
       
-      const res = await axios.get(`http://localhost:5000/api/orders?userId=${userId}`, {
+      const res = await axios.get(`https://final-project-production-3b18.up.railway.app/api/orders?userId=${userId}`, {
         headers: {
           Authorization: `Bearer ${token}` 
         }
@@ -75,7 +75,7 @@ function Orders() {
 
   const removeOrder = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/orders/${id}`);
+      await axios.delete(`https://final-project-production-3b18.up.railway.app/api/orders/${id}`);
       
       const updatedOrders = orders.filter(order => (order._id || order.id) !== id);
       setOrders(updatedOrders);

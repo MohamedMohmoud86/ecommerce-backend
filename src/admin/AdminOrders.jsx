@@ -9,13 +9,13 @@ export default function AdminOrders() {
   const fetchOrders = async () => {
     try {
       
-      const res = await axios.get("http://192.168.1.13:5000/api/orders/admin/all");
+      const res = await axios.get("https://final-project-production-3b18.up.railway.app/api/orders/admin/all");
       setOrders(res.data);
     } catch (err) {
       console.error("Failed with IP, trying localhost...", err);
       try {
       
-        const resLocal = await axios.get("http://localhost:5000/api/orders");
+        const resLocal = await axios.get("https://final-project-production-3b18.up.railway.app/api/orders");
         setOrders(resLocal.data);
       } catch (localErr) {
         console.error("All fetch attempts failed", localErr);
@@ -30,7 +30,7 @@ export default function AdminOrders() {
   
   const handleStatusChange = async (orderId, newStatus) => {
     try {
-      await axios.put(`http://192.168.1.13:5000/api/orders/${orderId}/status`, { orderStatus: newStatus });
+      await axios.put(`https://final-project-production-3b18.up.railway.app/api/orders/${orderId}/status`, { orderStatus: newStatus });
       toast.success(`Order status updated to ${newStatus}`);
       fetchOrders(); 
     } catch (err) {

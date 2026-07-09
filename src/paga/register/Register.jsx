@@ -81,10 +81,11 @@ export default function Register() {
       }
 
     } catch (err) {
+      console.log("Register Error:", err.response?.data);
       toast.error(
         err.response?.data?.message || "Register Failed"
       );
-      console.log(err.response?.data);
+      
     }
   };
 

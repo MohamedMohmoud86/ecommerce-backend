@@ -62,7 +62,7 @@ function VerifyOtp() {
         setError('');
 
         try {
-            const response = await axios.post("http://localhost:5000/api/verify-otp", { email, otp });
+            const response = await axios.post("https://final-project-production-3b18.up.railway.app/api/verify-otp", { email, otp });
             
            
             toast.success(response.data.message || "Account verified successfully! 🎉");
@@ -93,7 +93,7 @@ function VerifyOtp() {
         setLoading(true);
         setError('');
         try {
-            const response = await axios.post("http://localhost:5000/api/resend-otp", { email }); 
+            const response = await axios.post("https://final-project-production-3b18.up.railway.app/api/resend-otp", { email }); 
             
             
             toast.success(response.data.message || "A new OTP has been sent! 📧");

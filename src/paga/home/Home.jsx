@@ -38,7 +38,7 @@ function Home() {
       
       let myRealProducts = [];
       try {
-        const res = await fetch("http://192.168.1.13:5000/api/products");
+        const res = await fetch("https://final-project-production-3b18.up.railway.app/api/products");
         myRealProducts = await res.status === 200 ? await res.json() : [];
       } catch (e) {
         console.error("Your backend server is offline, using dummy only.");

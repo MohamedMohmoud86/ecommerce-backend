@@ -9,7 +9,7 @@ export default function AdminContact() {
 
   const fetchMessages = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/admin/contact");
+      const res = await axios.get("https://final-project-production-3b18.up.railway.app/api/admin/contact");
       setMessages(res.data);
     } catch (err) {
       console.error("Failed to fetch messages", err);
@@ -23,7 +23,7 @@ export default function AdminContact() {
 
   const handleDeleteMessage = async (id) => {
     try {
-      const res = await fetch(`http://localhost:5000/api/admin/contact/${id}`, {
+      const res = await fetch(`https://final-project-production-3b18.up.railway.app/api/admin/contact/${id}`, {
         method: "DELETE",
       });
 

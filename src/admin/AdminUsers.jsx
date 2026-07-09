@@ -6,7 +6,7 @@ export default function AdminUsers() {
 
   const fetchUsers = async () => {
     try {
-      const res = await axios.get("http://192.168.1.13:5000/api/admin/users");
+      const res = await axios.get("https://final-project-production-3b18.up.railway.app/api/admin/users");
       setUsers(res.data);
     } catch (err) {
       console.error("Failed to fetch users", err);

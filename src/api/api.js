@@ -1,9 +1,8 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "http://192.168.1.13:5000/api",
+  baseURL: "https://final-project-production-3b18.up.railway.app/api",
 });
-
 
 API.interceptors.request.use((req) => {
   const token = localStorage.getItem("token");

@@ -38,7 +38,13 @@ function Contact() {
     try {
       setLoading(true);
 
-      const res = await axios.post("http://192.168.1.13:5000/api/contact", formData);
+      
+const res = await axios.post("https://final-project-production-3b18.up.railway.app/api/contact", {
+  name: formData.name,
+  email: formData.email,
+  message: formData.message,
+  subject: "General Inquiry" 
+});
       
       if (res.status === 200 || res.status === 201) {
         toast.success(res.data.message || "Thank you! Your message has been sent.");
@@ -46,7 +52,7 @@ function Contact() {
       }
 
     } catch (error) {
-      console.error("Contact Error:", error);
+      console.log(error.response?.data);
       
      
       if (error.response && error.response.data && error.response.data.errors) {
